@@ -1,0 +1,39 @@
+---
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Curriculum', href: '/curriculum' },
+  { label: 'Programs', href: '/programs' },
+  { label: 'Admissions', href: '/admissions' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' }
+];
+
+const { currentPath = Astro.url.pathname } = Astro.props;
+---
+
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+  {navItems.map(item => {
+    // Check active path correctly (homepage exact match, others by prefix)
+    const isActive = item.href === '/' 
+      ? currentPath === '/' 
+      : currentPath.startsWith(item.href);
+      
+    return (
+      <a 
+        href={item.href} 
+        class={`relative py-2 text-sm font-medium transition-all duration-300 hover:text-white tracking-wide ${isActive ? 'text-white font-semibold' : 'text-brand-text-muted'}`}
+      >
+        {item.label}
+        {isActive && (
+          <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full" />
+        )}
+      </a>
+    )
+  })}
+</nav>
+
+<!-- Mobile Navigation Drawer Items -->
+<div class="hidden" id="mobile-nav-items-data">
+  {JSON.stringify(navItems)}
+</div>

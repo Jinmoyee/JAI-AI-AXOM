@@ -1,0 +1,71 @@
+---
+const toolGroups = [
+  {
+    name: "AI & Large Language Models",
+    tools: [
+      { name: "OpenAI GPT-4", desc: "API integrations, function calling, & reasoning models", icon: "🧠" },
+      { name: "Anthropic Claude", desc: "Advanced prompt engineering & complex text analysis", icon: "✍️" },
+      { name: "Hugging Face", desc: "Accessing & deploying open-source models locally", icon: "🤗" }
+    ]
+  },
+  {
+    name: "Software & Development",
+    tools: [
+      { name: "Python", desc: "Core coding language for AI development & automation", icon: "🐍" },
+      { name: "LangChain", desc: "Connecting LLMs to external systems and pipelines", icon: "🦜" },
+      { name: "Vector Databases", desc: "Pinecone, Chroma, and semantic search architectures", icon: "🗄️" }
+    ]
+  },
+  {
+    name: "Workflow & Automation",
+    tools: [
+      { name: "Microsoft Copilot", desc: "Powering Word, Excel, and Slides workflows", icon: "💼" },
+      { name: "Zapier & Make", desc: "Building automated workflows connecting business apps", icon: "⚡" },
+      { name: "Midjourney & ElevenLabs", desc: "Text-to-image synthesis and high-fidelity voice cloning", icon: "🎨" }
+    ]
+  }
+];
+---
+
+<section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden">
+  <!-- Small background glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    
+    <!-- Title Area -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white font-sans tracking-tight">
+        The Modern Tool Stack You'll Master
+      </h2>
+      <p class="text-brand-text-muted text-base sm:text-lg leading-relaxed">
+        Skip the outdated textbooks. Build real-world capability in the AI tools and engineering frameworks used by industry leaders.
+      </p>
+    </div>
+
+    <!-- Groups Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {toolGroups.map(group => (
+        <div class="space-y-6">
+          <h3 class="text-sm font-semibold tracking-wider text-brand-secondary uppercase border-b border-white/5 pb-2">
+            {group.name}
+          </h3>
+          <div class="space-y-4">
+            {group.tools.map(tool => (
+              <div class="glass-card hover:bg-brand-card-hover p-4 rounded-xl flex items-start space-x-4 border-white/5 hover:border-brand-primary/20 transition-all duration-300">
+                <div class="text-2xl p-2 bg-white/5 rounded-lg flex items-center justify-center">
+                  {tool.icon}
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white mb-1">{tool.name}</h4>
+                  <p class="text-xs text-brand-text-muted leading-relaxed">{tool.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

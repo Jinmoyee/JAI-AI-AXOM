@@ -1,0 +1,123 @@
+---
+import Button from '../ui/Button.astro';
+import Badge from '../ui/Badge.astro';
+---
+
+<section class="relative py-24 md:py-32 overflow-hidden bg-brand-bg">
+  <!-- Neon Background Glows -->
+  <div class="absolute top-1/4 left-1/10 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+  <div class="absolute bottom-10 right-1/10 w-[400px] h-[400px] bg-brand-secondary/15 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      
+      <!-- Hero Details -->
+      <div class="lg:col-span-7 text-left space-y-8">
+        <!-- Badge announcement -->
+        <div class="inline-flex items-center space-x-2">
+          <Badge text="NEW ACADEMIC SESSION OPEN" variant="accent" size="sm" />
+          <span class="text-xs text-brand-secondary font-medium tracking-wide">Learn with Hands-on AI labs</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-sans tracking-tight text-white leading-[1.1] md:leading-[1.1]">
+          JAI AI AXOM <br />
+          <span class="bg-gradient-to-r from-brand-primary via-indigo-400 to-brand-secondary bg-clip-text text-transparent">
+            Future Skills Academy
+          </span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="text-base sm:text-lg text-white font-medium max-w-xl leading-relaxed italic border-l-2 border-brand-secondary pl-4">
+          "Learn Computers. Master AI. Build Your Career."
+        </p>
+        <p class="text-sm sm:text-base text-brand-text-muted max-w-xl leading-relaxed">
+          India's most modern AI computer institute. Skip the traditional, dry computer lessons. Master fundamentals and office systems integrated with RAG, custom agentic workflows, Python coding, database queries, and no-code AI product building.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 pt-2">
+          <Button href="/programs" variant="primary" size="lg">
+            Explore Programs
+          </Button>
+          <Button href="/admissions" variant="outline" size="lg">
+            Apply Online
+          </Button>
+        </div>
+
+        <!-- Trust markers -->
+        <div class="border-t border-white/5 pt-8 grid grid-cols-3 gap-6 max-w-md">
+          <div>
+            <span class="block text-2xl font-bold text-white font-sans">7+</span>
+            <span class="block text-xs text-brand-text-muted">Pro Programs</span>
+          </div>
+          <div>
+            <span class="block text-2xl font-bold text-white font-sans">15+</span>
+            <span class="block text-xs text-brand-text-muted">AI Tools Taught</span>
+          </div>
+          <div>
+            <span class="block text-2xl font-bold text-white font-sans">100%</span>
+            <span class="block text-xs text-brand-text-muted">Hands-on Lab work</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Interactive CSS Mockup (Right) -->
+      <div class="lg:col-span-5 relative">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 rounded-2xl blur-xl opacity-30 -z-10"></div>
+        
+        <div class="glass-card glow-border rounded-xl shadow-2xl overflow-hidden font-sans border-white/10">
+          
+          <!-- Mockup Top Bar -->
+          <div class="bg-black/40 px-4 py-3 flex items-center justify-between border-b border-white/5">
+            <div class="flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            </div>
+            <div class="text-[11px] font-medium text-brand-text-muted tracking-wider uppercase bg-white/5 px-2 py-0.5 rounded">
+              Astro-AI-Agent.py
+            </div>
+            <div class="w-4"></div>
+          </div>
+
+          <!-- Code Content Window -->
+          <div class="p-6 text-left font-mono text-[12px] leading-relaxed text-slate-300 space-y-4 overflow-x-auto">
+            <div>
+              <span class="text-pink-400">import</span> openai <br />
+              <span class="text-pink-400">from</span> langchain <span class="text-pink-400">import</span> PromptTemplate, LLMChain
+            </div>
+            
+            <div>
+              <span class="text-emerald-400"># Configure Agentic Core</span> <br />
+              academy_agent = AIAgent( <br />
+              &nbsp;&nbsp;role=<span class="text-amber-300">"Mentor"</span>, <br />
+              &nbsp;&nbsp;curriculum=<span class="text-amber-300">"Computer Applications + AI"</span> <br />
+              )
+            </div>
+
+            <div class="border-t border-white/5 pt-3">
+              <span class="text-pink-400">def</span> <span class="text-blue-400">supercharge_workflow</span>(user_input): <br />
+              &nbsp;&nbsp;prompt = PromptTemplate( <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;template=<span class="text-amber-300">"Supercharge &#123;user_input&#125; with AI."</span> <br />
+              &nbsp;&nbsp;) <br />
+              &nbsp;&nbsp;<span class="text-pink-400">return</span> academy_agent.run(prompt)
+            </div>
+
+            <!-- Terminal Output Animation -->
+            <div class="bg-black/30 p-3 rounded-lg border border-white/5 mt-4 space-y-1 text-xs">
+              <div class="text-cyan-400 font-bold flex items-center">
+                <span class="w-1.5 h-1.5 bg-brand-secondary rounded-full mr-2 animate-ping"></span>
+                [SYSTEM]: Booting AI-Powered Student Terminal...
+              </div>
+              <div class="text-emerald-400">[SUCCESS]: Astro Dev Server loaded.</div>
+              <div class="text-slate-400">[OUTPUT]: DCA-AI modules fully responsive.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

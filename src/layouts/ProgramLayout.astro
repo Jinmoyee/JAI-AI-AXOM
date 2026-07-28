@@ -1,0 +1,141 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+import Button from '../components/ui/Button.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    duration: string;
+    mode: string;
+    eligibility: string;
+    badge?: string;
+    tools: string[];
+    targetAudience: string;
+    careerOpportunities: string[];
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="relative py-20 overflow-hidden">
+    <!-- Glowing background elements -->
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <!-- Back Link -->
+      <a href="/programs" class="inline-flex items-center text-sm font-medium text-brand-text-muted hover:text-white transition-colors mb-8 group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Programs
+      </a>
+
+      <!-- Header Section -->
+      <div class="border-b border-white/5 pb-12 mb-12">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          {frontmatter.badge && <Badge text={frontmatter.badge} variant="accent" />}
+          <Badge text={frontmatter.duration} variant="primary" />
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold font-sans tracking-tight text-white mb-6 bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+          {frontmatter.title}
+        </h1>
+        <p class="text-lg sm:text-xl text-brand-text-muted max-w-3xl leading-relaxed">
+          {frontmatter.description}
+        </p>
+      </div>
+
+      <!-- Main Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        
+        <!-- Left: Course Main Content (from Markdown) -->
+        <div class="lg:col-span-2 space-y-8 prose prose-invert max-w-none 
+          prose-headings:text-white prose-headings:font-semibold prose-headings:font-sans
+          prose-h2:text-2xl prose-h2:border-b prose-h2:border-white/5 prose-h2:pb-3 prose-h2:mt-12
+          prose-p:text-brand-text-muted prose-p:leading-relaxed
+          prose-li:text-brand-text-muted prose-strong:text-white prose-hr:border-white/5">
+          <slot />
+        </div>
+
+        <!-- Right: Course Quick Facts Sidebar -->
+        <div class="lg:col-span-1 space-y-6 lg:sticky lg:top-24">
+          <div class="glass-card glow-border p-6 rounded-xl space-y-6">
+            <h3 class="text-lg font-semibold text-white tracking-wide uppercase border-b border-white/5 pb-3">
+              Course Details
+            </h3>
+
+            <!-- Details List -->
+            <div class="space-y-4">
+              <div>
+                <span class="text-xs text-brand-text-muted block uppercase tracking-wider mb-1">Duration</span>
+                <span class="text-white font-medium text-sm flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  {frontmatter.duration}
+                </span>
+              </div>
+              
+              <div>
+                <span class="text-xs text-brand-text-muted block uppercase tracking-wider mb-1">Learning Mode</span>
+                <span class="text-white font-medium text-sm flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  {frontmatter.mode}
+                </span>
+              </div>
+
+              <div>
+                <span class="text-xs text-brand-text-muted block uppercase tracking-wider mb-1">Eligibility</span>
+                <span class="text-white font-medium text-sm flex items-center">
+                  <svg class="w-4 h-4 mr-2 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  {frontmatter.eligibility}
+                </span>
+              </div>
+            </div>
+
+            <!-- Tools Taught -->
+            <div class="border-t border-white/5 pt-4">
+              <span class="text-xs text-brand-text-muted block uppercase tracking-wider mb-3">Tools Taught</span>
+              <div class="flex flex-wrap gap-1.5">
+                {frontmatter.tools.map((tool) => (
+                  <Badge text={tool} variant="outline" size="sm" />
+                ))}
+              </div>
+            </div>
+
+            <!-- Target Audience -->
+            <div class="border-t border-white/5 pt-4">
+              <span class="text-xs text-brand-text-muted block uppercase tracking-wider mb-2">Ideal For</span>
+              <p class="text-sm text-brand-text-muted leading-relaxed">
+                {frontmatter.targetAudience}
+              </p>
+            </div>
+
+            <!-- Career Path -->
+            <div class="border-t border-white/5 pt-4">
+              <span class="text-xs text-brand-text-muted block uppercase tracking-wider mb-2">Career Outcomes</span>
+              <ul class="space-y-1">
+                {frontmatter.careerOpportunities.map((career) => (
+                  <li class="text-sm text-white flex items-center">
+                    <span class="w-1.5 h-1.5 bg-brand-secondary rounded-full mr-2"></span>
+                    {career}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Apply Action -->
+            <div class="border-t border-white/5 pt-6">
+              <Button href="/admissions" variant="primary" block>
+                Apply for Program
+              </Button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</BaseLayout>

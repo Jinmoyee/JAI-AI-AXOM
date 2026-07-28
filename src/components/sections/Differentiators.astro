@@ -1,0 +1,62 @@
+---
+const features = [
+  {
+    title: "100% Hands-On AI Labs",
+    description: "Build custom chatbots, workflow automations, and AI applications in every module. Less theoretical lectures, more actual code and tool usage.",
+    icon: "🔬"
+  },
+  {
+    title: "Future-Proof Tech Stack",
+    description: "Standard computer concepts (Word, Excel, software design) are taught integrated with modern tools like ChatGPT, Python, and LangChain.",
+    icon: "🚀"
+  },
+  {
+    title: "Expert Mentor Networks",
+    description: "Learn directly from working software developers, content strategists, and AI consultants who implement these technologies daily.",
+    icon: "👨‍🏫"
+  },
+  {
+    title: "Alumni Portfolios",
+    description: "Graduate with a live portfolio of automated workflows, web applications, and media content demonstrating your technical capabilities to hiring managers.",
+    icon: "💼"
+  }
+];
+---
+
+<section class="py-20 bg-brand-bg relative overflow-hidden">
+  <!-- Glowing effects -->
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white font-sans tracking-tight">
+        A New Era of Computer Education
+      </h2>
+      <p class="text-brand-text-muted text-base sm:text-lg leading-relaxed">
+        Traditional computer applications training is outdated. Here is how we build the practical expertise required for the modern digital workforce.
+      </p>
+    </div>
+
+    <!-- Grid List -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {features.map((feature) => (
+        <div class="glass-card hover:bg-brand-card-hover p-8 rounded-xl border border-white/5 hover:border-brand-secondary/20 transition-all duration-300 flex space-x-6 items-start">
+          <div class="text-3xl p-4 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
+            {feature.icon}
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-bold text-white font-sans">
+              {feature.title}
+            </h3>
+            <p class="text-sm text-brand-text-muted leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from 'astro:content';
+import ProgramLayout from '../../layouts/ProgramLayout.astro';
+
+// Generate paths for all entries in the programs collection
+export async function getStaticPaths() {
+  const programEntries = await getCollection('programs');
+  return programEntries.map(entry => ({
+    params: { slug: entry.id }, 
+    props: { entry },
+  }));
+}
+
+// Retrieve entry prop and render markdown body content using the new Content Layer render helper
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<ProgramLayout frontmatter={entry.data}>
+  <Content />
+</ProgramLayout>

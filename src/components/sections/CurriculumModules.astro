@@ -1,0 +1,312 @@
+---
+const modules = [
+  {
+    num: "01",
+    title: "AI Prompt Engineering Mastery",
+    subtitle: "How to Talk to AI",
+    tag: "Phase 1.1",
+    color: "from-violet-500 to-purple-600",
+    border: "border-violet-500/20",
+    glow: "hover:shadow-violet-500/10",
+    features: [
+      "Master AI Conversations with Advanced Prompting",
+      "Get 10x Better Responses from AI Tools",
+      "Turn AI into Your Personal Assistant",
+      "Prompt Frameworks: RACE, CRISPE, Chain-of-Thought",
+      "Prompt Priming, Iteration & Ask-for-Advice Technique",
+      "Build Custom AI Assistants (Custom GPTs)",
+      "Advanced Prompting for Code, Research & Creativity"
+    ]
+  },
+  {
+    num: "02",
+    title: "Fundamentals of Generative AI Ecosystem",
+    subtitle: "The AI Generalist Mindset",
+    tag: "Phase 1.1",
+    color: "from-blue-500 to-indigo-600",
+    border: "border-blue-500/20",
+    glow: "hover:shadow-blue-500/10",
+    features: [
+      "Hands-on with LLMs, MCP, Memory & Agents",
+      "Develop Context-Aware & Effective Prompts",
+      "Harness the Power of RAG (Retrieval-Augmented Generation)",
+      "Enable AI to Use Industry-Specific Private Data",
+      "Run LLMs Locally (Ollama, LM Studio)",
+      "Build a Strong GenAI Foundation",
+      "Develop an AI Generalist Mindset"
+    ]
+  },
+  {
+    num: "03",
+    title: "Research Work Using AI",
+    subtitle: "Write Reports & Analyze Data in Minutes",
+    tag: "Phase 1.2",
+    color: "from-orange-500 to-red-500",
+    border: "border-orange-500/20",
+    glow: "hover:shadow-orange-500/10",
+    features: [
+      "Automate Data Analysis for Faster Results",
+      "Summarize Large Datasets for Quick Insights",
+      "Identify Trends and Patterns with AI",
+      "Improve Research Accuracy Using AI Tools",
+      "Reduce Manual Work in Research Workflows",
+      "Use Perplexity, NotebookLM & Consensus",
+      "AI for Data-Driven Decision Making"
+    ]
+  },
+  {
+    num: "04",
+    title: "Build AI Powered Apps Without Coding",
+    subtitle: "AI-Driven Product Building",
+    tag: "Phase 1.2",
+    color: "from-cyan-500 to-teal-600",
+    border: "border-cyan-500/20",
+    glow: "hover:shadow-cyan-500/10",
+    features: [
+      "AI for Market Research & Customer Insights",
+      "Generate Product Roadmaps with AI Assistance",
+      "AI-Powered A/B Testing & User Feedback Analysis",
+      "Automate Product Documentation & User Guides",
+      "Turn Ideas into AI-Powered Apps Without Code (Lovable, Bolt)",
+      "Build AI-Driven Chatbots, Dashboards & SaaS Products",
+      "Integrate AI APIs to Add Intelligence to Your Apps"
+    ]
+  },
+  {
+    num: "05",
+    title: "Workflow Automation with Make.com",
+    subtitle: "Automate Day-to-Day Office Work",
+    tag: "Phase 1.3",
+    color: "from-purple-500 to-pink-600",
+    border: "border-purple-500/20",
+    glow: "hover:shadow-purple-500/10",
+    features: [
+      "Design AI-Powered Automation Workflows",
+      "Integrate Systems and APIs Seamlessly",
+      "Automate Data Extraction and Processing",
+      "Implement AI-Driven Decision-Making in Flows",
+      "Optimize and Troubleshoot Complex Workflows",
+      "Enhance Workflows with NLP for Text Tasks",
+      "Build Real Automations: Lead Capture, CRM, Email Sequences"
+    ]
+  },
+  {
+    num: "06",
+    title: "Data Analysis Using AI in Excel",
+    subtitle: "Analyze, Automate & Visualize Effortlessly",
+    tag: "Phase 1.2",
+    color: "from-emerald-500 to-green-600",
+    border: "border-emerald-500/20",
+    glow: "hover:shadow-emerald-500/10",
+    features: [
+      "AI-Powered Data Analysis & Business Insights",
+      "Generate Advanced Formulas & Macros Instantly",
+      "Automate Report Generation & Data Cleaning",
+      "AI-Powered Forecasting & Trend Analysis",
+      "Error Detection & Smart Suggestions with AI",
+      "Turn Raw Data into Actionable Business Insights",
+      "Master Excel's AI-Driven Automation Features (Copilot)"
+    ]
+  },
+  {
+    num: "07",
+    title: "Present Like a Pro: AI Decks & Storytelling",
+    subtitle: "Create Stunning Presentations in Minutes",
+    tag: "Phase 1.2",
+    color: "from-rose-500 to-red-600",
+    border: "border-rose-500/20",
+    glow: "hover:shadow-rose-500/10",
+    features: [
+      "AI-Powered Slide Design & Visual Enhancements",
+      "Generate Engaging Presentations Instantly (Gamma, Beautiful.AI)",
+      "Automate Slide Creation from Documents & Data",
+      "Use AI to Improve Storytelling & Narrative Flow",
+      "Turn Boring Data into Compelling Visuals",
+      "AI-Generated Smart Summaries & Key Takeaways",
+      "Build Investor & Business Pitches in Seconds"
+    ]
+  },
+  {
+    num: "08",
+    title: "Data Visualisation Using AI in Power BI",
+    subtitle: "Complex Data into AI-Driven Business Insights",
+    tag: "Phase 1.2",
+    color: "from-yellow-500 to-amber-600",
+    border: "border-yellow-500/20",
+    glow: "hover:shadow-yellow-500/10",
+    features: [
+      "Create AI-Powered Dashboards & Reports",
+      "Use AI to Detect Trends & Predict Future Outcomes",
+      "Natural Language Q&A: Ask Data, Get Instant Insights",
+      "AI for Data Cleaning, Integration & Automation",
+      "AI-Powered KPI Tracking & Business Performance Analysis",
+      "Turn Data into Visual Stories for Executive Decision-Making",
+      "Use Power BI Copilot for Automated Insights & Reporting"
+    ]
+  },
+  {
+    num: "09",
+    title: "AI Agents & Automations with n8n",
+    subtitle: "Build Autonomous AI Systems",
+    tag: "Phase 1.3",
+    color: "from-violet-600 to-blue-700",
+    border: "border-violet-600/20",
+    glow: "hover:shadow-violet-600/10",
+    features: [
+      "Create Intelligent AI Agents for Task Automation",
+      "Integrate AI Models with Workflows in n8n",
+      "Implement AI-Driven Actions and Triggers",
+      "Integrate Tools via MCP (Model Context Protocol)",
+      "Build an AI-Powered Customer Support Agent with RAG",
+      "Build Your Own AI Employee Personal Assistant",
+      "Build Voice Agents for Your Workplace (like Siri / Alexa)"
+    ]
+  },
+  {
+    num: "10",
+    title: "Personal Branding & LinkedIn with AI",
+    subtitle: "Optimize Your Professional Presence",
+    tag: "Phase 1.4",
+    color: "from-blue-600 to-cyan-600",
+    border: "border-blue-600/20",
+    glow: "hover:shadow-blue-600/10",
+    features: [
+      "Build a Strong LinkedIn Brand with AI Tools",
+      "Optimize Your Profile for Maximum Visibility",
+      "Generate Viral LinkedIn & Twitter Posts with AI",
+      "Build Your Complete Personal Brand Strategy",
+      "AI for Social Media Content & Engagement Growth",
+      "Automate Networking & Outreach with AI",
+      "Boost Online Visibility & Influence with AI"
+    ]
+  },
+  {
+    num: "11",
+    title: "AI for Freelancing & Business Owners",
+    subtitle: "Earn Money Using AI Skills",
+    tag: "Phase 1.4",
+    color: "from-teal-500 to-emerald-600",
+    border: "border-teal-500/20",
+    glow: "hover:shadow-teal-500/10",
+    features: [
+      "Set Up a Freelancing Profile on Upwork & Fiverr",
+      "Earn a 2nd Income Using AI Skills",
+      "Create AI Service Offerings That Clients Pay For",
+      "Build a Client Pipeline with AI-Assisted Outreach",
+      "Price Your AI Services Professionally",
+      "Work from Anywhere — Without Showing Your Face on Camera",
+      "Scale Your Freelance Business with AI Automation"
+    ]
+  },
+  {
+    num: "12",
+    title: "AI Image & Video Creation for Personal Brand",
+    subtitle: "Create and Optimize Content at Scale",
+    tag: "Phase 1.4",
+    color: "from-pink-500 to-purple-600",
+    border: "border-pink-500/20",
+    glow: "hover:shadow-pink-500/10",
+    features: [
+      "Master AI-Powered Image & Video Manipulation",
+      "Generate Stunning Videos & Voice Cloning from Text",
+      "Create High-Converting Ads & Content Instantly",
+      "Use AI for Audience Targeting & Social Media Growth",
+      "Write Viral Posts, Captions & Emails in Seconds",
+      "Build Immersive Content for Multiple Platforms",
+      "Tools: Midjourney, Runway, ElevenLabs, CapCut AI"
+    ]
+  },
+  {
+    num: "13",
+    title: "Business Communication with AI",
+    subtitle: "Smarter, Faster, More Effective Interactions",
+    tag: "Phase 1.5",
+    color: "from-slate-500 to-gray-600",
+    border: "border-slate-500/20",
+    glow: "hover:shadow-slate-500/10",
+    features: [
+      "Automate Routine Business Communications",
+      "AI-Craft Personalized Emails and Messages",
+      "Enhance Presentations with AI-Driven Insights",
+      "Optimize Internal Communication Workflows",
+      "Leverage AI for Real-Time Translations and Support",
+      "Measure and Improve Communication Effectiveness",
+      "Build Communication Templates & AI Playbooks"
+    ]
+  },
+  {
+    num: "14",
+    title: "AI ROI & Strategy",
+    subtitle: "Turn What You've Built into Business Impact",
+    tag: "Phase 1.5",
+    color: "from-amber-600 to-yellow-700",
+    border: "border-amber-600/20",
+    glow: "hover:shadow-amber-600/10",
+    features: [
+      "Measure AI Project ROI Effectively",
+      "Align AI Strategies with Business Goals",
+      "Optimize AI Initiatives for Maximum Impact",
+      "Build a Sustainable Long-Term AI Strategy",
+      "Track AI Performance and Business Outcomes",
+      "Communicate AI Value to Stakeholders & Leadership",
+      "Create Your AI Implementation Roadmap"
+    ]
+  },
+  {
+    num: "15",
+    title: "AI in Leadership & Team Management",
+    subtitle: "Manage, Negotiate & Lead with AI",
+    tag: "Phase 1.5",
+    color: "from-orange-700 to-red-700",
+    border: "border-orange-700/20",
+    glow: "hover:shadow-orange-700/10",
+    features: [
+      "Use AI for Leadership & Decision-Making",
+      "AI-Powered Sentiment Analysis for Team Feedback",
+      "Automate HR & Performance Evaluations",
+      "AI for Effective Crisis Management & Strategy",
+      "Improve Team Communication with AI Tools",
+      "Automate Employee Training & Onboarding",
+      "Build an AI-Ready Culture in Your Organization"
+    ]
+  }
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+  {modules.map((mod) => (
+    <div class={`group relative glass-card border ${mod.border} rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-all duration-300 shadow-lg ${mod.glow} hover:shadow-xl`}>
+      
+      <!-- Header -->
+      <div class="flex items-start justify-between mb-4">
+        <div class={`text-5xl font-black bg-gradient-to-br ${mod.color} bg-clip-text text-transparent leading-none select-none`}>
+          {mod.num}
+        </div>
+        <span class={`text-[10px] font-bold px-2 py-1 rounded-full bg-gradient-to-r ${mod.color} text-white shrink-0 ml-2 mt-1`}>
+          {mod.tag}
+        </span>
+      </div>
+
+      <!-- Title -->
+      <div class="mb-4">
+        <h3 class="text-base font-bold text-white font-sans leading-snug">
+          {mod.title}
+        </h3>
+        <p class={`text-xs mt-1 bg-gradient-to-r ${mod.color} bg-clip-text text-transparent font-semibold`}>
+          {mod.subtitle}
+        </p>
+      </div>
+
+      <!-- Features -->
+      <ul class="space-y-2 flex-1">
+        {mod.features.map(feature => (
+          <li class="flex items-start gap-2 text-xs text-brand-text-muted">
+            <span class={`mt-0.5 shrink-0 w-4 h-4 rounded-full bg-gradient-to-br ${mod.color} flex items-center justify-center text-[8px] text-white font-bold`}>✓</span>
+            <span class="leading-relaxed">{feature}</span>
+          </li>
+        ))}
+      </ul>
+
+    </div>
+  ))}
+</div>

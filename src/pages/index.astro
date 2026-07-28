@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import LearningPath from '../components/sections/LearningPath.astro';
+import Differentiators from '../components/sections/Differentiators.astro';
+import ToolStack from '../components/sections/ToolStack.astro';
+import ProgramCard from '../components/sections/ProgramCard.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+import Button from '../components/ui/Button.astro';
+
+// Fetch program content collection dynamically
+const programs = await getCollection('programs');
+const featuredPrograms = programs.filter(p => p.data.featured);
+---
+
+<BaseLayout 
+  title="JAI AI AXOM – Future Skills Academy | Learn Computers. Master AI. Build Your Career."
+  description="India's most modern AI computer institute. From DCA-AI diplomas to advanced AI agent building — prepare for jobs, freelancing, and entrepreneurship.">
+  
+  <!-- Hero banner section -->
+  <Hero />
+
+  <!-- Stats Teaser -->
+  <section class="py-12 border-t border-white/5 bg-brand-bg relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <a href="/curriculum" class="group block glass-card border border-white/5 hover:border-brand-secondary/30 rounded-2xl p-6 md:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-brand-secondary/5">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-12">
+          <div class="text-center">
+            <span class="block text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent font-sans">15+</span>
+            <span class="block text-xs text-brand-text-muted mt-1">AI-Powered Modules</span>
+          </div>
+          <div class="hidden sm:block w-px h-10 bg-white/10"></div>
+          <div class="text-center">
+            <span class="block text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent font-sans">3</span>
+            <span class="block text-xs text-brand-text-muted mt-1">Learning Phases</span>
+          </div>
+          <div class="hidden sm:block w-px h-10 bg-white/10"></div>
+          <div class="text-center">
+            <span class="block text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent font-sans">18+</span>
+            <span class="block text-xs text-brand-text-muted mt-1">Career Tracks</span>
+          </div>
+          <div class="hidden sm:block w-px h-10 bg-white/10"></div>
+          <div class="text-center">
+            <span class="block text-xs text-brand-text-muted group-hover:text-white transition-colors font-medium">Explore Full Curriculum →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Student Learning Path Roadmap -->
+  <LearningPath />
+
+  <!-- Differentiators value proposition section -->
+  <Differentiators />
+
+  <!-- Featured Programs section -->
+  <section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden">
+    <div class="absolute top-1/4 right-0 w-80 h-80 bg-brand-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-12 gap-6">
+        <div class="space-y-4 max-w-2xl">
+          <span class="text-xs font-semibold tracking-wider text-brand-secondary uppercase">Academic Catalog</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight font-sans">
+            Featured Programs
+          </h2>
+          <p class="text-brand-text-muted text-sm sm:text-base leading-relaxed">
+            From 45-day crash courses to 12-month postgraduate diplomas — practical, industry-focused programs built for the AI era.
+          </p>
+        </div>
+        <div>
+          <Button href="/programs" variant="outline">
+            View All Programs
+          </Button>
+        </div>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredPrograms.map(program => (
+          <ProgramCard 
+            title={program.data.title}
+            description={program.data.description}
+            duration={program.data.duration}
+            mode={program.data.mode}
+            badge={program.data.badge}
+            tools={program.data.tools}
+            slug={program.id}
+          />
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ToolStack technology section -->
+  <ToolStack />
+
+  <!-- Call to action section -->
+  <CTABanner />
+</BaseLayout>

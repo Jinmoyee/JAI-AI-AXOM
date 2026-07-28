@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+import Button from '../components/ui/Button.astro';
+
+const contactInfo = [
+  {
+    title: "Admissions Inquiry",
+    value: "admissions@aiacademy.edu",
+    icon: "✉️"
+  },
+  {
+    title: "General & Support",
+    value: "+1 (800) 555-0199",
+    icon: "📞"
+  },
+  {
+    title: "Tech Campus",
+    value: "100 Innovation Way, Suite 400, Silicon Hills, Tech City",
+    icon: "📍"
+  }
+];
+
+const faqMinis = [
+  {
+    q: "Can I study while working?",
+    a: "Yes! Our PGDCA-AI and short certificates offer hybrid weekend/evening formats specifically structured for professionals."
+  },
+  {
+    q: "Is prior coding experience required?",
+    a: "For DCA-AI and Office/Business courses, no experience is needed. For the AI Professional Certificate, basic programming logic is recommended."
+  }
+];
+---
+
+<BaseLayout title="Contact Us - Speak with our Academic Advisors" description="Get in touch with AI Academy's advising team. Ask questions regarding curriculum, batch schedules, fees, or corporate training opportunities.">
+  
+  <section class="relative py-20 overflow-hidden bg-brand-bg">
+    <!-- Glow gradients -->
+    <div class="absolute top-1/4 right-1/4 translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-brand-primary/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <!-- Page Header -->
+      <div class="max-w-3xl mb-16 space-y-4">
+        <Badge text="GET IN TOUCH" variant="primary" />
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-sans">
+          Connect with Our Team
+        </h1>
+        <p class="text-brand-text-muted text-base sm:text-lg max-w-2xl leading-relaxed">
+          Have questions about DCA-AI eligibility, program syllabi, or custom corporate team training? Reach out and we'll reply within 24 hours.
+        </p>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        
+        <!-- Left: Quick Info & Mini FAQ -->
+        <div class="lg:col-span-5 space-y-10">
+          
+          <!-- Contact details card list -->
+          <div class="space-y-6">
+            <h3 class="text-sm font-semibold tracking-wider text-brand-secondary uppercase border-b border-white/5 pb-2">
+              Direct Contact
+            </h3>
+            <div class="space-y-4">
+              {contactInfo.map((info) => (
+                <div class="glass-card p-4 rounded-xl flex items-start space-x-4 border-white/5">
+                  <div class="text-2xl p-2 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
+                    {info.icon}
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-semibold text-brand-text-muted uppercase tracking-wider">{info.title}</h4>
+                    <span class="text-sm font-semibold text-white mt-1 block">{info.value}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Small FAQs -->
+          <div class="space-y-6">
+            <h3 class="text-sm font-semibold tracking-wider text-brand-secondary uppercase border-b border-white/5 pb-2">
+              Frequently Asked
+            </h3>
+            <div class="space-y-4">
+              {faqMinis.map(faq => (
+                <div class="space-y-1">
+                  <h4 class="text-sm font-bold text-white">{faq.q}</h4>
+                  <p class="text-xs text-brand-text-muted leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Styled Interactive Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card glow-border p-8 rounded-xl space-y-6 border-white/10">
+            <h3 class="text-xl font-bold text-white font-sans">
+              Send a Message
+            </h3>
+            
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message sent successfully!')">
+              
+              <!-- Row: Name & Email -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label for="name" class="text-xs text-brand-text-muted uppercase tracking-wider block">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="John Doe"
+                    class="w-full px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-primary transition-colors"
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label for="email" class="text-xs text-brand-text-muted uppercase tracking-wider block">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    placeholder="john@example.com"
+                    class="w-full px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-primary transition-colors"
+                  />
+                </div>
+              </div>
+
+              <!-- Row: Select Program -->
+              <div class="space-y-1">
+                <label for="program" class="text-xs text-brand-text-muted uppercase tracking-wider block">Program of Interest</label>
+                <select
+                  id="program"
+                  class="w-full px-3 py-2 text-sm bg-brand-bg border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-primary transition-colors"
+                >
+                  <option value="none">General Inquiry</option>
+                  <option value="dca-ai">Diploma (DCA-AI)</option>
+                  <option value="pgdca-ai">Post Graduate (PGDCA-AI)</option>
+                  <option value="ai-professional-cert">AI Professional Certificate</option>
+                  <option value="ai-office-professionals">AI for Office Professionals</option>
+                  <option value="ai-for-students">AI Essentials for Students</option>
+                  <option value="ai-for-business-owners">AI-Driven Business Transformation</option>
+                  <option value="ai-content-creator">AI for Content Creators</option>
+                </select>
+              </div>
+
+              <!-- Row: Message -->
+              <div class="space-y-1">
+                <label for="message" class="text-xs text-brand-text-muted uppercase tracking-wider block">Message</label>
+                <textarea
+                  id="message"
+                  required
+                  rows="5"
+                  placeholder="Tell us about your background and study goals..."
+                  class="w-full px-3 py-2 text-sm bg-white/5 border border-white/10 rounded-lg text-white focus:outline-none focus:border-brand-primary transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Button Submit -->
+              <div class="pt-2">
+                <Button type="submit" variant="primary" block>
+                  Send Message
+                </Button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,102 @@
+---
+const levels = [
+  {
+    num: "01",
+    title: "Computer Fundamentals",
+    desc: "Windows, Internet, Email, File Management, Google Workspace, Cyber Security, Cloud Storage",
+    color: "from-violet-500 to-purple-600",
+    glow: "bg-violet-500/10"
+  },
+  {
+    num: "02",
+    title: "Microsoft Office + AI",
+    desc: "MS Word, Excel, PowerPoint supercharged with Copilot, AI formula generation, AI dashboards",
+    color: "from-blue-500 to-indigo-600",
+    glow: "bg-blue-500/10"
+  },
+  {
+    num: "03",
+    title: "AI Productivity",
+    desc: "ChatGPT, Gemini, Claude, Prompt Engineering, Canva AI, Gamma AI, NotebookLM, Perplexity",
+    color: "from-cyan-500 to-teal-600",
+    glow: "bg-cyan-500/10"
+  },
+  {
+    num: "04",
+    title: "Professional Skills",
+    desc: "Resume Building, Portfolio, LinkedIn Branding, AI Research, Report Writing, Presentations",
+    color: "from-emerald-500 to-green-600",
+    glow: "bg-emerald-500/10"
+  },
+  {
+    num: "05",
+    title: "Automation & AI Agents",
+    desc: "Make, Zapier, n8n, APIs, Webhooks, AI Agents, Voice Agents, Customer Support Bots",
+    color: "from-orange-500 to-amber-600",
+    glow: "bg-orange-500/10"
+  },
+  {
+    num: "06",
+    title: "Career & Freelancing",
+    desc: "Freelancing Profile, Personal Branding, AI Content Creation, Upwork/Fiverr, Portfolio",
+    color: "from-rose-500 to-pink-600",
+    glow: "bg-rose-500/10"
+  }
+];
+---
+
+<section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <span class="text-xs font-semibold tracking-wider text-brand-secondary uppercase">Student Journey</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white font-sans tracking-tight">
+        Your AI Learning Roadmap
+      </h2>
+      <p class="text-brand-text-muted text-base leading-relaxed">
+        A structured, step-by-step progression from zero knowledge to full AI professional, freelancer, or entrepreneur.
+      </p>
+    </div>
+
+    <!-- Roadmap Steps (Vertical on Mobile, Horizontal-ish on Desktop) -->
+    <div class="relative">
+      <!-- Vertical connector line -->
+      <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-primary/40 via-brand-secondary/40 to-transparent md:-translate-x-px hidden sm:block"></div>
+
+      <div class="space-y-8">
+        {levels.map((level, index) => (
+          <div class={`relative flex flex-col sm:flex-row items-start sm:items-center gap-6 ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}>
+            <!-- Step dot -->
+            <div class="hidden sm:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-bg border-2 border-brand-primary/50 items-center justify-center z-10 text-xs font-bold text-white">
+              {level.num}
+            </div>
+
+            <!-- Content Card -->
+            <div class={`w-full sm:w-[calc(50%-3rem)] glass-card border border-white/5 hover:border-white/10 p-6 rounded-xl transition-all duration-300 ${level.glow} group hover:-translate-y-1`}>
+              <div class="flex items-start gap-4">
+                <div class={`text-xs font-bold px-2 py-1 rounded bg-gradient-to-r ${level.color} text-white sm:hidden shrink-0`}>
+                  {level.num}
+                </div>
+                <div class="space-y-2">
+                  <h3 class={`font-bold text-white font-sans bg-gradient-to-r ${level.color} bg-clip-text text-transparent text-lg`}>
+                    {level.title}
+                  </h3>
+                  <p class="text-xs text-brand-text-muted leading-relaxed">
+                    {level.desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spacer for alternating layout -->
+            <div class="hidden sm:block w-[calc(50%-3rem)]"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CurriculumModules from '../components/sections/CurriculumModules.astro';
+import Button from '../components/ui/Button.astro';
+import Badge from '../components/ui/Badge.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+
+const phaseData = [
+  {
+    phase: "Phase 1",
+    title: "AI Fundamentals & Generalist Skills",
+    subtitle: "Master the complete AI ecosystem — from prompt engineering to AI agents, automation, branding, and strategy.",
+    modules: "15 Modules",
+    duration: "Foundation Core",
+    icon: "01",
+    color: "from-violet-500 to-purple-600",
+    border: "border-violet-500/20",
+    glow: "bg-violet-500/5",
+    highlights: [
+      "Prompt Engineering & GenAI Ecosystem",
+      "Research, Excel, Presentations & Power BI",
+      "Workflow Automation (Make, n8n)",
+      "AI Agents, Personal Branding & Freelancing",
+      "AI Image/Video Creation & Business Communication",
+      "AI ROI, Strategy & Leadership"
+    ]
+  },
+  {
+    phase: "Phase 2",
+    title: "Capstone Project",
+    subtitle: "Solve real-world business problems by building production-ready AI applications from concept to deployment.",
+    modules: "1 Capstone",
+    duration: "Applied Learning",
+    icon: "02",
+    color: "from-cyan-500 to-teal-600",
+    border: "border-cyan-500/20",
+    glow: "bg-cyan-500/5",
+    highlights: [
+      "Define a real-world problem statement",
+      "Design an AI-powered solution end-to-end",
+      "Build with Make.com, n8n, AI agents & APIs",
+      "Create dashboards, analytics & reporting",
+      "Present your work as a portfolio project",
+      "Get mentor feedback & industry validation"
+    ]
+  },
+  {
+    phase: "Phase 3",
+    title: "Apply AI in Your Industry",
+    subtitle: "Choose your specialization track and learn how AI transforms your domain — with hands-on tools and case studies.",
+    modules: "18+ Tracks",
+    duration: "Specialization",
+    icon: "03",
+    color: "from-amber-500 to-orange-600",
+    border: "border-amber-500/20",
+    glow: "bg-amber-500/5",
+    highlights: [
+      "Software Development & DevOps with AI",
+      "Data Science, Analytics & Engineering",
+      "Digital Marketing, Sales & Content Creation",
+      "Finance, HR, Legal & Supply Chain",
+      "Healthcare, Education & Engineering",
+      "UI/UX, Product & Project Management"
+    ]
+  }
+];
+
+const specializations = [
+  { title: "Software Development", icon: "💻", desc: "AI code generation, debugging, code review, documentation, and full-stack development with AI assistants." },
+  { title: "DevOps", icon: "⚙️", desc: "AI-powered CI/CD, infrastructure monitoring, incident response, and automated deployment pipelines." },
+  { title: "MLOps", icon: "🤖", desc: "AI model lifecycle management, experiment tracking, model deployment, monitoring, and governance." },
+  { title: "Cloud Engineering", icon: "☁️", desc: "AI-optimized cloud architecture, cost management, resource provisioning, and cloud security automation." },
+  { title: "QA & Testing", icon: "🧪", desc: "AI-driven test generation, bug detection, visual testing, test automation, and quality analytics." },
+  { title: "Data Science", icon: "📊", desc: "Predictive modeling, machine learning, feature engineering, model interpretation, and AI-driven research." },
+  { title: "Data Analytics", icon: "📈", desc: "AI-powered analytics, dashboard automation, trend forecasting, and business intelligence reporting." },
+  { title: "Data Engineering", icon: "🗄️", desc: "AI-assisted ETL pipelines, data warehousing, data quality, and schema optimization." },
+  { title: "Financial Analysis", icon: "💹", desc: "AI for financial modeling, risk assessment, fraud detection, portfolio optimization, and reporting." },
+  { title: "Graphic Design", icon: "🎨", desc: "AI image generation, brand asset creation, logo design, social media graphics, and visual storytelling." },
+  { title: "UI/UX", icon: "🖌️", desc: "AI-powered wireframing, user research, prototype generation, accessibility testing, and design systems." },
+  { title: "Digital Marketing", icon: "📱", desc: "AI campaign optimization, audience targeting, content generation, SEO, and marketing analytics." },
+  { title: "Product Management", icon: "📋", desc: "AI for roadmap planning, user story generation, competitive analysis, and product strategy." },
+  { title: "Project Management", icon: "📐", desc: "AI-assisted scheduling, resource allocation, risk management, and project reporting." },
+  { title: "Education", icon: "📚", desc: "AI for personalized learning, lesson planning, assessment generation, and student analytics." },
+  { title: "Engineering", icon: "🔧", desc: "AI in CAD, simulation, design optimization, predictive maintenance, and engineering analysis." },
+  { title: "Supply Chain & Logistics", icon: "🚚", desc: "AI for inventory optimization, demand forecasting, route planning, and warehouse automation." },
+  { title: "Customer Support", icon: "🎧", desc: "AI chatbots, sentiment analysis, ticket automation, knowledge base generation, and support analytics." },
+  { title: "Healthcare", icon: "🏥", desc: "AI for medical imaging, patient data analysis, clinical decision support, and health records management." },
+  { title: "HR", icon: "👥", desc: "AI-powered recruitment, resume screening, employee engagement, performance reviews, and HR analytics." },
+  { title: "Legal", icon: "⚖️", desc: "AI for contract analysis, legal research, document review, compliance monitoring, and case prediction." },
+  { title: "Sales", icon: "📞", desc: "AI lead scoring, sales forecasting, CRM automation, proposal generation, and sales analytics." },
+  { title: "Social Media", icon: "📸", desc: "AI content scheduling, viral post generation, audience insights, engagement automation, and growth analytics." },
+  { title: "Content Creation", icon: "✍️", desc: "AI writing, video production, audio editing, script generation, and multi-platform content repurposing." }
+];
+
+const bonusCourses = [
+  {
+    title: "ChatGPT Prompt Library",
+    subtitle: "3,264+ Business Prompts",
+    desc: "A comprehensive collection covering management, operations, finance, sales, marketing, HR, analytics, and every business department.",
+    color: "from-emerald-500 to-green-600",
+    border: "border-emerald-500/20"
+  },
+  {
+    title: "Python & SQL Using AI",
+    subtitle: "Code with AI Assistance",
+    desc: "Learn Python programming and SQL databases end-to-end using AI-assisted development, debugging, automation, and query optimization.",
+    color: "from-blue-500 to-indigo-600",
+    border: "border-blue-500/20"
+  },
+  {
+    title: "Tableau Masterclass",
+    subtitle: "Dashboard & Analytics Pro",
+    desc: "From beginner to advanced — create interactive dashboards, forecasting models, KPI trackers, and enterprise BI reports with AI.",
+    color: "from-orange-500 to-red-500",
+    border: "border-orange-500/20"
+  },
+  {
+    title: "Cybersecurity & AI Safety",
+    subtitle: "Protect with AI",
+    desc: "AI-powered threat detection, phishing prevention, identity verification, anomaly detection, AI governance, and data privacy.",
+    color: "from-rose-500 to-pink-600",
+    border: "border-rose-500/20"
+  }
+];
+---
+
+<BaseLayout 
+  title="Complete AI Curriculum – 15 Modules, 3 Phases, 18+ Career Tracks"
+  description="Explore the full JAI AI AXOM curriculum: AI fundamentals, capstone project, and industry specialization. Master prompt engineering, automation, AI agents, and more.">
+  
+  <!-- ===== HERO ===== -->
+  <section class="relative py-28 md:py-36 overflow-hidden bg-brand-bg">
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-primary/8 rounded-full blur-[180px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+      <div class="max-w-4xl mx-auto space-y-6">
+        <Badge text="COMPLETE CURRICULUM" variant="primary" size="sm" />
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white font-sans tracking-tight leading-tight">
+          All These Learnings <br />
+          <span class="bg-gradient-to-r from-brand-primary via-indigo-400 to-brand-secondary bg-clip-text text-transparent">
+            in 1 Program
+          </span>
+        </h1>
+        <p class="text-brand-text-muted text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          A unified, three-phase curriculum designed to take you from AI fundamentals to industry-ready expert. 
+          15 comprehensive modules, a real-world capstone, and 18+ specialization tracks — all in one program.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 pt-4">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-brand-text-muted border border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-secondary"></span>
+            15+ Modules
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-brand-text-muted border border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary"></span>
+            3 Learning Phases
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-brand-text-muted border border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+            18+ Career Tracks
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 text-brand-text-muted border border-white/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            4 Bonus Courses
+          </span>
+        </div>
+        <div class="pt-4">
+          <Button href="/admissions" variant="primary" size="lg">
+            Enroll Now — Limited Seats
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3-PHASE ROADMAP ===== -->
+  <section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <Badge text="YOUR LEARNING JOURNEY" variant="secondary" />
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white font-sans tracking-tight">
+          From Foundation to <span class="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Industry Impact</span>
+        </h2>
+        <p class="text-brand-text-muted text-base leading-relaxed">
+          A structured progression across three phases — each designed to build on the last, culminating in real-world application.
+        </p>
+      </div>
+
+      <!-- Phase Timeline -->
+      <div class="relative">
+        <!-- Connector line -->
+        <div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-primary/40 via-brand-secondary/30 to-brand-accent/20 md:-translate-x-px hidden sm:block"></div>
+
+        <div class="space-y-12">
+          {phaseData.map((phase, index) => (
+            <div class={`relative flex flex-col md:flex-row items-start gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <!-- Phase Number Badge -->
+              <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-brand-bg border-2 border-brand-secondary/30 items-center justify-center z-10">
+                <span class={`text-lg font-black bg-gradient-to-br ${phase.color} bg-clip-text text-transparent`}>{phase.icon}</span>
+              </div>
+
+              <!-- Content Card -->
+              <div class={`w-full md:w-[calc(50%-3rem)] glass-card border ${phase.border} rounded-2xl p-8 transition-all duration-300 ${phase.glow} hover:shadow-xl hover:-translate-y-1`}>
+                <div class="flex items-start gap-3 mb-4">
+                  <span class={`md:hidden text-sm font-black px-2 py-1 rounded bg-gradient-to-r ${phase.color} text-white shrink-0`}>{phase.phase}</span>
+                  <div>
+                    <h3 class="text-xl font-bold text-white font-sans">{phase.title}</h3>
+                    <p class={`text-xs font-semibold bg-gradient-to-r ${phase.color} bg-clip-text text-transparent mt-0.5`}>{phase.subtitle}</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 mb-5 text-xs text-brand-text-muted">
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white/5 text-brand-text-muted">
+                    {phase.modules}
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white/5 text-brand-text-muted">
+                    {phase.duration}
+                  </span>
+                </div>
+                <ul class="space-y-2.5">
+                  {phase.highlights.map(h => (
+                    <li class="flex items-start gap-3 text-sm text-brand-text-muted">
+                      <span class={`mt-0.5 shrink-0 w-5 h-5 rounded-full bg-gradient-to-br ${phase.color} flex items-center justify-center text-[10px] text-white font-bold`}>✓</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Spacer for alternating layout -->
+              <div class="hidden md:block w-[calc(50%-3rem)]"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ALL 15 MODULES ===== -->
+  <section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden" id="modules">
+    <div class="absolute top-1/3 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <Badge text="PHASE 1 CORE" variant="accent" />
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white font-sans tracking-tight">
+          All 15 Modules — <span class="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Complete Feature Breakdown</span>
+        </h2>
+        <p class="text-brand-text-muted text-base leading-relaxed">
+          Every module is packed with hands-on skills, real tools, and actionable outcomes. No fluff — just what you need to master AI.
+        </p>
+      </div>
+
+      <CurriculumModules />
+    </div>
+  </section>
+
+  <!-- ===== PHASE 3: SPECIALIZATION GRID ===== -->
+  <section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden" id="specializations">
+    <div class="absolute bottom-1/4 left-0 w-96 h-96 bg-brand-secondary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <Badge text="PHASE 3 SPECIALIZATION" variant="primary" />
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white font-sans tracking-tight">
+          Apply AI in <span class="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Your Industry</span>
+        </h2>
+        <p class="text-brand-text-muted text-base leading-relaxed">
+          Choose from 18+ industry and role-specific tracks. Learn how AI transforms your domain with real tools, case studies, and hands-on projects.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {specializations.map(spec => (
+          <div class="group glass-card border border-white/5 hover:border-brand-primary/30 rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-primary/5">
+            <div class="flex items-start gap-3">
+              <span class="text-xl shrink-0 mt-0.5">{spec.icon}</span>
+              <div>
+                <h4 class="text-sm font-bold text-white font-sans group-hover:text-brand-secondary transition-colors">{spec.title}</h4>
+                <p class="text-xs text-brand-text-muted mt-1.5 leading-relaxed">{spec.desc}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BONUS COURSES ===== -->
+  <section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden">
+    <div class="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-brand-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <Badge text="BONUS COURSES" variant="accent" />
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white font-sans tracking-tight">
+          Extra Skills, <span class="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Zero Extra Cost</span>
+        </h2>
+        <p class="text-brand-text-muted text-base leading-relaxed">
+          These bonus modules are included free with your enrollment — giving you even more firepower for your career.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {bonusCourses.map(course => (
+          <div class={`group glass-card border ${course.border} rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}>
+            <div class={`w-10 h-10 rounded-xl bg-gradient-to-br ${course.color} flex items-center justify-center text-white text-lg font-bold mb-4 group-hover:scale-110 transition-transform`}>
+              +
+            </div>
+            <h3 class="text-base font-bold text-white font-sans mb-1">{course.title}</h3>
+            <p class={`text-xs font-semibold bg-gradient-to-r ${course.color} bg-clip-text text-transparent mb-3`}>{course.subtitle}</p>
+            <p class="text-xs text-brand-text-muted leading-relaxed">{course.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENROLL CTA ===== -->
+  <CTABanner />
+</BaseLayout>

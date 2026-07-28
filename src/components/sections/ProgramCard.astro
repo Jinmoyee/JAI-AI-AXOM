@@ -1,0 +1,66 @@
+---
+import Badge from '../ui/Badge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  duration: string;
+  mode: string;
+  badge?: string;
+  tools: string[];
+  slug: string;
+}
+
+const { title, description, duration, mode, badge, tools, slug } = Astro.props;
+---
+
+<div class="glass-card glow-border rounded-xl p-6 flex flex-col justify-between h-full group hover:-translate-y-1 transition-all duration-300">
+  
+  <div class="space-y-4">
+    <!-- Header: Badges -->
+    <div class="flex items-center justify-between gap-2">
+      <div class="flex flex-wrap gap-1.5">
+        {badge && <Badge text={badge} variant="accent" size="sm" />}
+        <Badge text={duration} variant="outline" size="sm" />
+      </div>
+      <span class="text-xs text-brand-text-muted">{mode}</span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-xl font-bold text-white group-hover:text-brand-secondary transition-colors font-sans">
+      {title}
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-brand-text-muted leading-relaxed line-clamp-3">
+      {description}
+    </p>
+
+    <!-- Divider -->
+    <div class="border-t border-white/5 pt-3">
+      <span class="text-[11px] text-brand-text-muted block uppercase tracking-wider mb-2">Key Skills & Tools</span>
+      <div class="flex flex-wrap gap-1">
+        {tools.slice(0, 4).map(tool => (
+          <Badge text={tool} variant="primary" size="sm" />
+        ))}
+        {tools.length > 4 && (
+          <span class="text-[10px] text-brand-text-muted px-1.5 py-0.5 self-center font-medium">+{tools.length - 4} more</span>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Link -->
+  <div class="pt-6 mt-4 border-t border-white/5 flex items-center justify-between">
+    <a 
+      href={`/programs/${slug}`} 
+      class="inline-flex items-center text-xs font-semibold text-brand-secondary-light group-hover:text-white transition-colors"
+    >
+      Learn Curriculum
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+
+</div>

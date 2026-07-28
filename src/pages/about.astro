@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Badge from '../components/ui/Badge.astro';
+import Button from '../components/ui/Button.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+
+const outcomes = [
+  { icon: "💼", title: "Jobs", desc: "Get hired in IT, admin, data, content, and AI-assisted roles." },
+  { icon: "🌐", title: "Freelancing", desc: "Earn online on Upwork, Fiverr, and Toptal with AI skills." },
+  { icon: "🚀", title: "Entrepreneurship", desc: "Launch your own AI-powered product, agency, or service." },
+  { icon: "🤖", title: "AI Productivity", desc: "Work 10x faster using AI assistants, automation & agents." },
+  { icon: "🔗", title: "AI Automation", desc: "Build workflows with Make, Zapier, n8n, and APIs." },
+  { icon: "🔬", title: "AI Research", desc: "Use Consensus, NotebookLM, Elicit, and Scite professionally." },
+  { icon: "🛠️", title: "AI App Development", desc: "Ship apps using Lovable, Bolt, Replit AI, Bubble, and Glide." },
+  { icon: "📈", title: "Career Growth", desc: "Build a LinkedIn presence, portfolio, and personal brand." }
+];
+
+const pillars = [
+  {
+    icon: "🤖",
+    title: "AI Integrations in Every Module",
+    desc: "We do not teach applications in isolation. Every skill — from basic spreadsheets to Python programming — is taught alongside its AI equivalent (ChatGPT, Copilot, Claude, APIs) to model real modern workspaces."
+  },
+  {
+    icon: "📂",
+    title: "Portfolio-First Learning",
+    desc: "Students build real deliverables: automated support desks, live AI chatbots, Excel dashboards, marketing campaigns, and AI-generated content. You graduate with proof, not just a certificate."
+  },
+  {
+    icon: "⚡",
+    title: "No-Code + Code Hybrid",
+    desc: "We teach the best of both worlds: no-code tools (Lovable, Bubble, Zapier) for speed, and Python + SQL + APIs for depth. You can ship projects with or without traditional coding."
+  },
+  {
+    icon: "📈",
+    title: "Always Updated Curriculum",
+    desc: "AI tools change weekly. Our curriculum is continuously updated to include the latest LLMs, MCP protocols, agent frameworks, and productivity workflows used by professionals today."
+  }
+];
+---
+
+<BaseLayout 
+  title="About JAI AI AXOM – Our Mission, Vision & Methodology"
+  description="Learn about JAI AI AXOM Future Skills Academy — India's most modern AI computer institute preparing students for Jobs, Freelancing, and AI-powered careers.">
+  
+  <!-- Hero Section -->
+  <section class="relative py-20 overflow-hidden bg-brand-bg">
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="max-w-3xl space-y-6">
+        <Badge text="WHO WE ARE" variant="primary" />
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-sans leading-tight">
+          JAI AI AXOM –<br />
+          <span class="bg-gradient-to-r from-brand-primary via-indigo-400 to-brand-secondary bg-clip-text text-transparent">
+            Future Skills Academy
+          </span>
+        </h1>
+        <p class="text-lg font-semibold text-white italic border-l-2 border-brand-secondary pl-4">
+          "Learn Computers. Master AI. Build Your Career."
+        </p>
+        <p class="text-base text-brand-text-muted leading-relaxed">
+          JAI AI AXOM is not a traditional DCA centre. We are India's most forward-thinking computer and AI training institute — built from the ground up to produce professionals who are ready for the jobs, freelance markets, and entrepreneurial opportunities of the AI era.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-16 border-t border-white/5 bg-brand-bg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-6 space-y-6">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white font-sans">
+            Transforming a Traditional Computer Institute into India's Best AI Academy
+          </h2>
+          <p class="text-sm sm:text-base text-brand-text-muted leading-relaxed">
+            Traditional DCA programs teach outdated workflows. They prepare students for the digital world of 2010, not 2025. JAI AI AXOM bridges that gap — combining computer fundamentals, Microsoft Office, and AI productivity into a single, modern, career-focused curriculum.
+          </p>
+          <p class="text-sm sm:text-base text-brand-text-muted leading-relaxed">
+            Our graduates go on to work as AI operations executives, automate entire businesses, build revenue-generating apps without coding, and create freelance income on global platforms — not because we teach theory, but because we teach tools.
+          </p>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="glass-card glow-border p-8 rounded-xl space-y-4">
+            <h3 class="text-lg font-bold text-white font-sans border-b border-white/5 pb-3">We Prepare Students For</h3>
+            <div class="grid grid-cols-2 gap-4">
+              {outcomes.map(item => (
+                <div class="flex items-start space-x-3">
+                  <span class="text-xl">{item.icon}</span>
+                  <div>
+                    <h4 class="text-sm font-semibold text-white">{item.title}</h4>
+                    <p class="text-[11px] text-brand-text-muted mt-0.5 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars Section -->
+  <section class="py-20 border-t border-white/5 bg-brand-bg relative" id="methodology">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-semibold tracking-wider text-brand-secondary uppercase">Teaching Framework</span>
+        <h2 class="text-3xl font-extrabold text-white tracking-tight font-sans">
+          What Makes JAI AI AXOM Different
+        </h2>
+        <p class="text-brand-text-muted text-sm sm:text-base leading-relaxed">
+          Four core principles that separate us from every other computer institute in Assam.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {pillars.map(pillar => (
+          <div class="glass-card p-6 rounded-xl border border-white/5 hover:border-brand-primary/20 transition-colors flex space-x-5 items-start">
+            <div class="text-3xl p-3 bg-white/5 rounded-lg w-fit shrink-0">
+              {pillar.icon}
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-white font-sans">{pillar.title}</h3>
+              <p class="text-sm text-brand-text-muted leading-relaxed">{pillar.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProgramCard from '../../components/sections/ProgramCard.astro';
+import Badge from '../../components/ui/Badge.astro';
+import CTABanner from '../../components/sections/CTABanner.astro';
+
+// Fetch all programs in content collection
+const programs = await getCollection('programs');
+---
+
+<BaseLayout title="All Programs - AI & Computer Applications Course Catalog" description="Discover our full curriculum of diploma, post-graduate, and short courses. Each program embeds practical AI tooling and modern software operations.">
+  
+  <section class="relative py-20 overflow-hidden bg-brand-bg">
+    <!-- Glow backgrounds -->
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-brand-secondary/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <!-- Header -->
+      <div class="max-w-3xl mb-16 space-y-4">
+        <Badge text="ACADEMIC CATALOG" variant="primary" />
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight font-sans">
+          Explore Our AI & Tech Programs
+        </h1>
+        <p class="text-brand-text-muted text-base sm:text-lg max-w-2xl leading-relaxed">
+          From foundation diplomas to advanced engineering certificates, find the track that fits your background and professional goals.
+        </p>
+      </div>
+
+      <!-- Programs Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {programs.map(program => (
+          <ProgramCard 
+            title={program.data.title}
+            description={program.data.description}
+            duration={program.data.duration}
+            mode={program.data.mode}
+            badge={program.data.badge}
+            tools={program.data.tools}
+            slug={program.id}
+          />
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <CTABanner />
+</BaseLayout>
