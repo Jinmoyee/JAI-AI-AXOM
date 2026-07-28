@@ -2,6 +2,7 @@
 import Nav from './Nav.astro';
 import Button from '../ui/Button.astro';
 
+const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -10,7 +11,7 @@ const currentPath = Astro.url.pathname;
     <div class="flex items-center justify-between h-20">
       
       <!-- Logo Branding -->
-      <a href="/" class="flex items-center space-x-2 group">
+      <a href={base} class="flex items-center space-x-2 group">
         <div class="relative w-9 h-9 flex items-center justify-center rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary text-white font-extrabold text-lg shadow-lg shadow-brand-primary/20 group-hover:scale-105 transition-transform">
           J
           <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary blur opacity-50 -z-10 group-hover:opacity-100 transition-opacity"></div>
@@ -25,7 +26,7 @@ const currentPath = Astro.url.pathname;
 
       <!-- CTA Button Desktop -->
       <div class="hidden md:flex items-center space-x-4">
-        <Button href="/admissions" variant="outline" size="sm">
+        <Button href={`${base}/admissions`} variant="outline" size="sm">
           Apply Now
         </Button>
       </div>
@@ -55,26 +56,26 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile Menu Drawer (hidden by default) -->
   <div class="md:hidden hidden border-t border-white/5 bg-brand-bg/95 backdrop-blur-xl" id="mobile-menu">
     <div class="px-4 pt-2 pb-6 space-y-3">
-      <a href="/" class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath === '/' ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
+      <a href={base} class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath === base ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
         Home
       </a>
-      <a href="/curriculum" class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith('/curriculum') ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
+      <a href={`${base}/curriculum`} class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith(`${base}/curriculum`) ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
         Curriculum
       </a>
-      <a href="/programs" class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith('/programs') ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
+      <a href={`${base}/programs`} class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith(`${base}/programs`) ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
         Programs
       </a>
-      <a href="/admissions" class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith('/admissions') ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
+      <a href={`${base}/admissions`} class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith(`${base}/admissions`) ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
         Admissions
       </a>
-      <a href="/about" class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith('/about') ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
+      <a href={`${base}/about`} class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith(`${base}/about`) ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
         About
       </a>
-      <a href="/contact" class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith('/contact') ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
+      <a href={`${base}/contact`} class={`block px-3 py-2.5 rounded-lg text-base font-medium transition-all ${currentPath.startsWith(`${base}/contact`) ? 'bg-white/10 text-white font-semibold' : 'text-brand-text-muted hover:bg-white/5 hover:text-white'}`}>
         Contact
       </a>
       <div class="pt-4 px-3">
-        <Button href="/admissions" variant="primary" block>
+        <Button href={`${base}/admissions`} variant="primary" block>
           Apply Now
         </Button>
       </div>

@@ -1,6 +1,8 @@
 ---
 import Button from '../ui/Button.astro';
 import Badge from '../ui/Badge.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="relative py-24 md:py-32 overflow-hidden bg-brand-bg">
@@ -37,10 +39,10 @@ import Badge from '../ui/Badge.astro';
 
         <!-- CTAs -->
         <div class="flex flex-wrap gap-4 pt-2">
-          <Button href="/programs" variant="primary" size="lg">
+          <Button href={`${base}/programs`} variant="primary" size="lg">
             Explore Programs
           </Button>
-          <Button href="/admissions" variant="outline" size="lg">
+          <Button href={`${base}/admissions`} variant="outline" size="lg">
             Apply Online
           </Button>
         </div>

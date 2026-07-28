@@ -17,6 +17,7 @@ interface Props {
   };
 }
 
+const base = import.meta.env.BASE_URL;
 const { frontmatter } = Astro.props;
 ---
 
@@ -28,7 +29,7 @@ const { frontmatter } = Astro.props;
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <!-- Back Link -->
-      <a href="/programs" class="inline-flex items-center text-sm font-medium text-brand-text-muted hover:text-white transition-colors mb-8 group">
+      <a href={`${base}/programs`} class="inline-flex items-center text-sm font-medium text-brand-text-muted hover:text-white transition-colors mb-8 group">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
@@ -128,7 +129,7 @@ const { frontmatter } = Astro.props;
 
             <!-- Apply Action -->
             <div class="border-t border-white/5 pt-6">
-              <Button href="/admissions" variant="primary" block>
+              <Button href={`${base}/admissions`} variant="primary" block>
                 Apply for Program
               </Button>
             </div>

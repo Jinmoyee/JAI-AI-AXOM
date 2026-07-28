@@ -1,11 +1,12 @@
 ---
+const base = import.meta.env.BASE_URL;
 const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Curriculum', href: '/curriculum' },
-  { label: 'Programs', href: '/programs' },
-  { label: 'Admissions', href: '/admissions' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' }
+  { label: 'Home', href: base || '/' },
+  { label: 'Curriculum', href: `${base}/curriculum` },
+  { label: 'Programs', href: `${base}/programs` },
+  { label: 'Admissions', href: `${base}/admissions` },
+  { label: 'About', href: `${base}/about` },
+  { label: 'Contact', href: `${base}/contact` }
 ];
 
 const { currentPath = Astro.url.pathname } = Astro.props;
@@ -14,11 +15,9 @@ const { currentPath = Astro.url.pathname } = Astro.props;
 <!-- Desktop Navigation -->
 <nav class="hidden md:flex items-center space-x-8">
   {navItems.map(item => {
-    // Check active path correctly (homepage exact match, others by prefix)
-    const isActive = item.href === '/' 
-      ? currentPath === '/' 
+    const isActive = item.href === base
+      ? currentPath === base
       : currentPath.startsWith(item.href);
-      
     return (
       <a 
         href={item.href} 
