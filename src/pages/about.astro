@@ -4,6 +4,8 @@ import Badge from '../components/ui/Badge.astro';
 import Button from '../components/ui/Button.astro';
 import CTABanner from '../components/sections/CTABanner.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const outcomes = [
   { icon: "💼", title: "Jobs", desc: "Get hired in IT, admin, data, content, and AI-assisted roles." },
   { icon: "🌐", title: "Freelancing", desc: "Earn online on Upwork, Fiverr, and Toptal with AI skills." },
@@ -126,6 +128,91 @@ const pillars = [
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MEET THE TEAM ===== -->
+  <section class="py-20 border-t border-white/5 bg-brand-bg relative overflow-hidden">
+    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-brand-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-semibold tracking-wider text-brand-secondary uppercase">Our Team</span>
+        <h2 class="text-3xl font-extrabold text-white tracking-tight font-sans">
+          Meet the Minds Behind JAI AI AXOM
+        </h2>
+        <p class="text-brand-text-muted text-sm sm:text-base leading-relaxed">
+          Industry experts, AI specialists, and educators committed to building India's most modern AI computer institute.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Raju Ahmed -->
+        <div class="glass-card glow-border rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start border-white/10">
+          <div class="shrink-0 w-24 h-24 md:w-28 md:h-28 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary p-0.5">
+            <img src={`${base}/team/raju-ahmed.jpg`} alt="Raju Ahmed"
+              class="w-full h-full rounded-xl object-cover bg-brand-bg"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <div class="hidden w-full h-full rounded-xl bg-brand-bg items-center justify-center text-3xl font-bold text-brand-secondary" aria-hidden="true">RA</div>
+          </div>
+          <div class="space-y-3 flex-1">
+            <div>
+              <h3 class="text-xl font-bold text-white font-sans">Raju Ahmed</h3>
+              <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">Computer Engineer & AI Specialist</span>
+            </div>
+            <p class="text-sm text-brand-text-muted leading-relaxed">
+              Graduate from NEHU with a background in Computer Engineering. Raju brings deep expertise in AI systems, 
+              curriculum design, and hands-on training — ensuring every program at JAI AI AXOM is industry-relevant and future-ready.
+            </p>
+          </div>
+        </div>
+
+        <!-- Jinmoyee Thakuria -->
+        <div class="glass-card glow-border rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start border-white/10">
+          <div class="shrink-0 w-24 h-24 md:w-28 md:h-28 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary p-0.5">
+            <img src={`${base}/team/jinmoyee-thakuria.jpg`} alt="Jinmoyee Thakuria"
+              class="w-full h-full rounded-xl object-cover bg-brand-bg"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <div class="hidden w-full h-full rounded-xl bg-brand-bg items-center justify-center text-3xl font-bold text-brand-secondary" aria-hidden="true">JT</div>
+          </div>
+          <div class="space-y-3 flex-1">
+            <div>
+              <h3 class="text-xl font-bold text-white font-sans">Jinmoyee Thakuria</h3>
+              <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">AI, ML & Computer Vision | Full-Stack Development | Research & Innovation</span>
+            </div>
+            <p class="text-sm text-brand-text-muted leading-relaxed">
+              Computer Science Graduate with expertise in AI, Machine Learning, Computer Vision, and Full-Stack Development. 
+              Jinmoyee drives research and innovation at JAI AI AXOM — building cutting-edge AI solutions and shaping the 
+              academy's technical vision.
+            </p>
+          </div>
+        </div>
+
+        <!-- Working Professional (Anonymous/Student) -->
+        <div class="glass-card glow-border rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start border-white/10">
+          <div class="shrink-0 w-24 h-24 md:w-28 md:h-28 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary p-0.5">
+            <img src={`${base}/team/student.jpg`} alt="Team Member"
+              class="w-full h-full rounded-xl object-cover bg-brand-bg"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <div class="hidden w-full h-full rounded-xl bg-brand-bg items-center justify-center text-3xl font-bold text-brand-secondary" aria-hidden="true">??</div>
+          </div>
+          <div class="space-y-3 flex-1">
+            <div>
+              <h3 class="text-xl font-bold text-white font-sans">Associate Team Member</h3>
+              <span class="text-xs font-semibold text-brand-secondary uppercase tracking-wider">AI Engineer | NIT Silchar & IIT Madras Alumni</span>
+            </div>
+            <p class="text-sm text-brand-text-muted leading-relaxed">
+              A highly accomplished engineer currently working in the industry. B-Tech from NIT Silchar and M-Tech from IIT Madras — 
+              bringing top-tier technical expertise, real-world experience, and advanced AI knowledge to the academy's program development.
+              <span class="block mt-2 text-xs italic">(Identity withheld per request — currently employed.)</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
