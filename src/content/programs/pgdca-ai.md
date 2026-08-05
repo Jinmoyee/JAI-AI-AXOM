@@ -12,7 +12,7 @@ featured: true
 ---
 
 ## Program Overview
-The **PGDCA + AI** is JAI AI AXOM's most comprehensive program — a 12-month postgraduate curriculum designed for graduates who want to go beyond basic computer applications and master the full stack of modern AI systems. Split into two powerful semesters, this program takes you from advanced Office workflows to building real AI agents, apps, and data intelligence products.
+The **PGDCA + AI** is Assam Cognexa Institute's most comprehensive program — a 12-month postgraduate curriculum designed for graduates who want to go beyond basic computer applications and master the full stack of modern AI systems. Split into two powerful semesters, this program takes you from advanced Office workflows to building real AI agents, apps, and data intelligence products.
 
 ---
 
