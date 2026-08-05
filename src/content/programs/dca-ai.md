@@ -12,7 +12,7 @@ featured: true
 ---
 
 ## Program Overview
-The **Diploma in Computer Applications + AI (DCA-AI)** is JAI AI AXOM's flagship 6-month program that transforms complete beginners into confident, job-ready professionals. Unlike traditional DCA programs, every module in this course is taught alongside its AI-powered equivalent — so you learn to work smarter, faster, and more creatively from day one.
+The **Diploma in Computer Applications + AI (DCA-AI)** is Assam Cognexa Institute's flagship 6-month program that transforms complete beginners into confident, job-ready professionals. Unlike traditional DCA programs, every module in this course is taught alongside its AI-powered equivalent — so you learn to work smarter, faster, and more creatively from day one.
 
 ---
 
@@ -122,4 +122,4 @@ Graduates leave with a real portfolio of completed AI projects.
 ---
 
 ## Certification
-**DCA + AI Professional** — Issued by JAI AI AXOM Future Skills Academy upon successful completion of all modules and project submissions.
+**DCA + AI Professional** — Issued by Assam Cognexa Institute – Future Skills Academy upon successful completion of all modules and project submissions.

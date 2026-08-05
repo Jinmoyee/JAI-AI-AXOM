@@ -6,6 +6,21 @@ const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 ---
 
+<!-- Accreditation Top Bar -->
+  <div class="w-full bg-gradient-to-r from-brand-primary/10 via-brand-secondary/10 to-brand-primary/10 border-b border-white/5 py-1.5 px-4 text-center flex flex-wrap items-center justify-center gap-3 text-[10px] text-brand-text-muted">
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 font-semibold">
+      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      ISO Approved
+    </span>
+    <span class="text-white/20">|</span>
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold">
+      <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg>
+      Government Verified
+    </span>
+    <span class="text-white/20">|</span>
+    <span>Affiliated with <a href="https://mipeonline.in" target="_blank" rel="noopener" class="text-brand-secondary hover:underline font-medium">Mighty Tech Institute</a></span>
+  </div>
+
 <header class="sticky top-0 z-50 w-full glass-nav transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
@@ -13,12 +28,14 @@ const currentPath = Astro.url.pathname;
       <!-- Logo Branding -->
       <a href={base} class="flex items-center space-x-2 group">
         <div class="relative w-9 h-9 flex items-center justify-center rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary text-white font-extrabold text-lg shadow-lg shadow-brand-primary/20 group-hover:scale-105 transition-transform">
-          J
+          A
           <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-brand-primary to-brand-secondary blur opacity-50 -z-10 group-hover:opacity-100 transition-opacity"></div>
         </div>
         <span class="font-sans font-extrabold tracking-wider text-lg text-white group-hover:text-brand-secondary transition-colors leading-tight">
-          JAI AI AXOM<span class="text-brand-secondary font-light block text-[10px] tracking-widest uppercase">Future Skills Academy</span>
-          <span class="text-[9px] font-normal text-brand-text-muted tracking-normal block">Affiliated by MightyTech Institute</span>
+          Assam Cognexa Institute<span class="text-brand-secondary font-light block text-[10px] tracking-widest uppercase">Future Skills Academy</span>
+          <span class="text-[9px] font-normal text-brand-text-muted tracking-normal block">
+            <a href="https://mipeonline.in" target="_blank" rel="noopener" class="hover:text-brand-secondary transition-colors">Affiliated · MightyTech</a>
+          </span>
         </span>
       </a>
 
